@@ -1,5 +1,5 @@
-FROM debian:buster
-LABEL maintainer="Jeff Geerling"
+FROM kalilinux/kali-rolling
+LABEL maintainer="Shane Frasier"
 
 ENV DEBIAN_FRONTEND noninteractive
 
