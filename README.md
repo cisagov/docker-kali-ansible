@@ -23,6 +23,7 @@ If you need to build the image on your own locally, do the following:
 
 Shane Frasier - <jeremy.frasier@trio.dhs.gov>
 
-Heavily based on geerlingguy/docker-debian10-ansible by [Jeff
-Geerling](https://www.jeffgeerling.com/) AKA
+Heavily based on
+[geerlingguy/docker-debian10-ansible](https://github.com/geerlingguy/docker-debian10-ansible)
+by [Jeff Geerling](https://www.jeffgeerling.com/) AKA
 [@geerlingguy](https://github.com/geerlingguy).
