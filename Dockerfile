@@ -9,6 +9,7 @@ ENV pip_packages "ansible cryptography"
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
        build-essential \
+       iproute2 \
        libffi-dev \
        libssl-dev \
        python3-apt \
