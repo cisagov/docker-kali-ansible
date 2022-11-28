@@ -14,13 +14,13 @@ This image is built on Docker Hub automatically any time the upstream OS contain
 
   1. [Install Docker](https://docs.docker.com/engine/installation/).
   2. `cd` into this directory.
-  3. Run `docker build -t docker-kali-ansible .`
+  3. Run `docker build --tag cisagov/docker-kali-ansible .`
 
 ## How to Use ##
 
   1. [Install Docker](https://docs.docker.com/engine/installation/).
   2. Pull this image from Docker Hub: `docker pull cisagov/docker-kali-ansible:latest` (or use the image you built earlier).
-  3. Run a container from the image: `docker run --detach --privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro cisagov/docker-kali-ansible:latest`.
+  3. Run a container from the image: `docker run --detach --privileged --cgroupns=host --volume=/sys/fs/cgroup:/sys/fs/cgroup:rw cisagov/docker-kali-ansible:latest`.
   4. Use Ansible inside the container:
     a. `docker exec --tty [container_id] env TERM=xterm ansible --version`
     b. `docker exec --tty [container_id] env TERM=xterm ansible-playbook /path/to/ansible/playbook.yml --syntax-check`
