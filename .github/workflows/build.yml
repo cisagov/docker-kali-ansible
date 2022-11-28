@@ -14,7 +14,12 @@ jobs:
   # Test the image builds and works correctly.
   test:
     name: Test
-    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        os:
+          - ubuntu-20.04
+          - ubuntu-22.04
+    runs-on: ${{ matrix.os }}
 
     steps:
       - uses: actions/checkout@v3
