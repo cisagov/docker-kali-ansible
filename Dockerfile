@@ -25,9 +25,6 @@ RUN apt-get update \
     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man \
     && apt-get clean
 
-# Upgrade pip to latest version.
-RUN pip3 install --break-system-packages --upgrade pip
-
 # Install Ansible via pip.
 RUN pip3 install --break-system-packages $pip_packages
 
