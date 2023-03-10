@@ -26,10 +26,10 @@ RUN apt-get update \
     && apt-get clean
 
 # Upgrade pip to latest version.
-RUN pip3 install --upgrade pip
+RUN pip3 install --break-system-packages --upgrade pip
 
 # Install Ansible via pip.
-RUN pip3 install $pip_packages
+RUN pip3 install --break-system-packages $pip_packages
 
 COPY initctl_faker .
 RUN chmod +x initctl_faker && rm -fr /sbin/initctl && ln -s /initctl_faker /sbin/initctl
