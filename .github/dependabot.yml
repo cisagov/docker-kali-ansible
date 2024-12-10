@@ -1,0 +1,12 @@
+---
+updates:
+  - directory: /
+    groups:
+      gha-dependencies:
+        patterns:
+          - "*"
+    package-ecosystem: github-actions
+    schedule:
+      interval: weekly
+
+version: 2
