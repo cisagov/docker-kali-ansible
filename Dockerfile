@@ -22,14 +22,17 @@ RUN apt-get update \
        systemd-sysv \
        wget \
     && rm -rf /var/lib/apt/lists/* \
-    && rm -Rf /usr/share/doc && rm -Rf /usr/share/man \
+    && rm -Rf /usr/share/doc \
+    && rm -Rf /usr/share/man \
     && apt-get clean
 
 # Install Ansible via pip.
 RUN pip3 install --break-system-packages $pip_packages
 
 COPY initctl_faker .
-RUN chmod +x initctl_faker && rm -fr /sbin/initctl && ln -s /initctl_faker /sbin/initctl
+RUN chmod +x initctl_faker \
+    && rm -fr /sbin/initctl \
+    && ln -s /initctl_faker /sbin/initctl
 
 # Install Ansible inventory file.
 RUN mkdir -p /etc/ansible
