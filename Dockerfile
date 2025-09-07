@@ -1,4 +1,4 @@
-FROM kalilinux/kali-rolling
+FROM docker.io/kalilinux/kali-rolling
 LABEL maintainer="Shane Frasier"
 
 ARG DEBIAN_FRONTEND=noninteractive
