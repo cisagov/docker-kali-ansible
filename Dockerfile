@@ -31,7 +31,7 @@ RUN pip3 install --break-system-packages $pip_packages
 
 COPY initctl_faker .
 RUN chmod +x initctl_faker \
-    && rm --force --recursive /sbin/initctl \
+    && rm --force /sbin/initctl \
     && ln --symbolic /initctl_faker /sbin/initctl
 
 # Install Ansible inventory file.
